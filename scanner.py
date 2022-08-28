@@ -39,5 +39,6 @@ except socket.error:
     sys.exit()
     
     
-      
+print('Hora de finalizacion: ' + str(datetime.now()))
+    
     
