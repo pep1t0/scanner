@@ -6,7 +6,7 @@ from datetime import datetime
 
 #Define nuestro objetivo - A MEJORAR CON ARGPARSER
 if len(sys.argv) == 2:
-    target = socket.gethostname(sys.argv[1]) #Conversion de hostname a IPv4
+    target = socket.gethostbyname(sys.argv[1]) #Conversion de hostname a IPv4
 else:
     print('Argumentos invalidos')
     print('Sintaxis: python3 scanner.py <ip>')
