@@ -1,8 +1,8 @@
-from datetime import datetime
 from socket import socket
 import sys
 import socket
 from datetime import datetime
+import time
 
 #Define nuestro objetivo - A MEJORAR CON ARGPARSER
 if len(sys.argv) == 2:
@@ -10,12 +10,14 @@ if len(sys.argv) == 2:
 else:
     print('Argumentos invalidos')
     print('Sintaxis: python3 scanner.py <ip>')
+    sys.exit()
     
 #Banner - A MEJORAR
 print('-' * 50)
 print('Escaneando objetivo...' + target)
 print('Hora de inicio: ' + str(datetime.now()))
 print('-' * 50)
+start_time = time.time()
 
 try:
     for port in range(1,1024): # A MEJORAR PASANDO PUERTOS POR PARAMETROS
@@ -39,6 +41,7 @@ except socket.error:
     sys.exit()
     
     
-print('Hora de finalizacion: ' + str(datetime.now()))
-    
+print('[+] Hora de finalizacion: ' + str(datetime.now()))
+end_time = time.time()
+print('[+] Tiempo total transcurrido %ssecs' % (end_time - start_time))    
     

@@ -1,4 +1,4 @@
-# from datetime import datetime
+from datetime import datetime
 from socket import socket
 import sys
 import socket
@@ -39,7 +39,7 @@ else:
 print('-' * 50)
 print('Escaneando objetivo...' + target)
 start_time = time.time()
-print('Hora de inicio: ' + start_time)
+print('Hora de inicio: ' + str(datetime.now()))
 print('-' * 50)
        
 with concurrent.futures.ThreadPoolExecutor(max_workers=NUM_WORKERS) as executor:
@@ -48,8 +48,8 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=NUM_WORKERS) as executor:
         
 end_time = time.time()
 
-print('Hora de finalizacion: ' + end_time)
-print('Tiempo transcurrido: %ssecs',(end_time - start_time))    
+print('Hora de finalizacion: ' + str(datetime.now()))
+print('Tiempo transcurrido: %ssecs' %(end_time - start_time))    
 
     
     
